@@ -1,0 +1,26 @@
+class Animal:
+    # Metodo constructor
+    def __init__(self, nombre, especie):
+        self.nombre = nombre
+        self.especie = especie
+
+    def imprimir_datos(self):
+        print(f"nombre: {self.nombre}")
+        print(f"especie: {self.especie}")
+
+# Clase derivada Perro
+class Perro(Animal):
+    def __init__(self, nombre, especie, raza):  
+        super().__init__(nombre, especie)  
+        self.raza = raza
+
+    def imprimir_datos(self):
+        super().imprimir_datos()
+        print(f"raza: {self.raza}")
+
+# Creación del objeto Tobias
+tobias = Perro("Tobias", "grande", "freshpuder")
+
+# Uso de los métodos
+print(f"nombre: {tobias.nombre}")
+tobias.imprimir_datos()
