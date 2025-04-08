@@ -1,0 +1,41 @@
+class Vehiculo:
+    # Inicializador de la clase Vehiculo
+    def __init__(self, marca, año):
+        # Asignar valores a los atributos marca y año
+        self.marca = marca
+        self.año = año
+
+    # Método  los datos del vehículo
+    def imprimir_datos(self):
+        print("Información del vehículo:")
+        print("Marca:", self.marca)
+        print("Año:", self.año)
+        print("")  
+
+# Clase Coche que hereda de Vehiculo
+class Coche(Vehiculo):
+    # Inicializador de la clase Coche
+    def __init__(self, marca, año, modelo):
+        # Llamar al inicializador de la clase padre
+        super().__init__(marca, año)
+        # Asignar el valor del modelo al atributo correspondiente
+        self.modelo = modelo
+
+    # Método para imprimir el modelo del coche
+    def imprimir_modelo(self):
+        print("Información del coche:")
+        print("Modelo:", self.modelo)
+        print("")  # Otro espacio porque se ve "bonito"
+
+# Crear una instancia de la clase Coche
+mi_coche = Coche("Kiat", 2012, "Ion")
+
+# Imprimir datos de la instancia paso a paso
+print("Primero vamos a imprimir los datos del vehículo:\n")
+mi_coche.imprimir_datos()
+
+print("Ahora imprimimos el modelo del coche:\n")
+mi_coche.imprimir_modelo()
+
+# Agregamos más comentarios para "explicar" qué hace el código
+print("¡Listo! Ahora sabemos todo sobre este coche.\n")
