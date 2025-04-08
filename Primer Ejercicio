@@ -1,0 +1,22 @@
+class Persona:
+    def __init__(self, nombre, edad):  # Constructor para init nombre y edad
+        self.nombre = nombre
+        self.edad = edad
+
+    def imprimir_datos(self):  
+        print("Nombre:", self.nombre)
+        print("Edad:", self.edad)
+
+class Estudiante(Persona):  #  hereda de Persona
+    def __init__(self, nombre, edad, grado):  # Constructor que usa super()
+        super().__init__(nombre, edad)
+        self.grado = grado
+
+    def imprimir_grado(self):  # Método para imprimir el grado
+        print("Grado:", self.grado)
+
+estudiante = Estudiante("Dylan", 23, "3° Semestre")
+
+# Imprimir los atributos
+estudiante.imprimir_datos()
+estudiante.imprimir_grado()
